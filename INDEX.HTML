@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AMRKAL MS WEBSITE DESIGNER | Pro Designer</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
+body{background:#0b1120;color:#fff}
+
+header{position:fixed;width:100%;top:0;background:#020617;padding:15px 40px;display:flex;justify-content:space-between;z-index:1000}
+
+nav a{color:#fff;margin-left:20px;text-decoration:none}
+
+.hero{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+background:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.8)),url('https://images.unsplash.com/photo-1498050108023-c5249f4df085');
+background-size:cover;
+}
+
+.hero h1{font-size:50px}
+
+.btn{
+padding:12px 25px;
+background:#22c55e;
+border:none;
+margin-top:20px;
+border-radius:6px;
+cursor:pointer;
+}
+
+section{padding:80px 40px}
+
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
+
+.card{background:#1e293b;padding:20px;border-radius:10px}
+
+input,textarea{
+width:100%;
+padding:12px;
+margin:10px 0;
+border:none;
+border-radius:6px;
+}
+
+footer{background:#020617;padding:20px;text-align:center}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<h2>AMRKAL MS</h2>
+<nav>
+<a href="#home">Home</a>
+<a href="#contact">Contact</a>
+</nav>
+</header>
+
+<section id="home" class="hero">
+<h1>I Design Ultra Pro Websites 🚀</h1>
+<p>UP Basti | Full Digital Solutions</p>
+<button class="btn" onclick="scrollToContact()">Hire Me</button>
+</section>
+
+<section id="contact">
+<h2>Contact Us</h2>
+
+<form onsubmit="saveLead(event)">
+<input id="name" placeholder="Your Name" required>
+<input id="phone" placeholder="Phone Number" required>
+<textarea id="msg" placeholder="Project Details"></textarea>
+<button class="btn" type="submit">Send</button>
+</form>
+
+</section>
+
+<footer>
+<p>© AMRKAL MS WEBSITE DESIGNER</p>
+</footer>
+
+<script>
+
+// WhatsApp enquiry working FIX
+function saveLead(e){
+e.preventDefault();
+
+let nameVal = document.getElementById('name').value;
+let phoneVal = document.getElementById('phone').value;
+let msgVal = document.getElementById('msg').value;
+
+let text = `🔥 NEW ENQUIRY 🔥
+👤 Name: ${nameVal}
+📞 Phone: ${phoneVal}
+📝 Work: ${msgVal}`;
+
+let wa = "https://wa.me/917081573977?text=" + encodeURIComponent(text);
+
+window.open(wa, "_blank");
+}
+
+function scrollToContact(){
+document.getElementById('contact').scrollIntoView({behavior:'smooth'});
+}
+
+</script>
+
+</body>
+</html>
